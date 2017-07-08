@@ -1,0 +1,67 @@
+- Models
+  - Users
+    - email
+    - password
+    - name
+    - gender
+  - Subscriptions
+    - user_id
+    - payment_type
+    - payment_processed
+  - Payments
+    - subscription_id
+    - payed_value
+    - valid_until
+  - Categories
+    - name
+  - SubCategories
+    - category_id
+    - name
+  - MediaGroups (for episode lists, seasons)
+    - media_group_id (many in many)
+    - title
+    - description
+  - Medias (the content)
+    - media_group_id (optional)
+    - type (episode/movie)
+    - title
+    - description
+    - subtitled
+    - dubbed
+  - Favorites
+    - user_id
+    - source_id (media_id or media_group_id)
+    - stars (1 to 5)
+  - WatchLists
+    - user_id
+    - media_id
+  - MediaTracks
+    - user_id
+    - media_id
+    - progress_position
+    - ended (bool)
+
+- Controllers
+  - Auth
+    /login
+    /register
+    /logout
+  - Users
+    /edit
+    /update
+    /settings
+    /destroy
+  - Subscriptions and Payments
+    /subscribe
+    /unsubscribe
+    /payments
+  - Watch
+    /index
+  - Categories & SubCategories
+    /:category_id
+    /:category_id/subcategories (list of subcategories)
+  - HomePage
+  - Favorites
+  - WatchList
+  - History
+  - API

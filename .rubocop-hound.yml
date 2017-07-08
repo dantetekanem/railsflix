@@ -1,0 +1,7 @@
+inherit_from:
+  - .rubocop-base.yml
+
+# Disabled because Hound doesn't know rubocop-rspec rules which
+# sometimes still need to be disabled with comments.
+Lint/UnneededDisable:
+  Enabled: false
